@@ -19,11 +19,9 @@ const UserSchema = new mongoose.Schema({
         require:true
     },
     profilePicture:{
-        require:true,
         default:""
     },
     coverPicture:{
-        require:true,
         default:""
     },
     followers: { // Should be an array
