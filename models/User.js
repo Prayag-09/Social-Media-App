@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
     username: {
         type:String,
-        require: true,
+        required: true,
         min:5,
         max:16,
         description:'Username should be of Min 5 character',
@@ -11,22 +11,23 @@ const UserSchema = new mongoose.Schema({
     },
     email:{
         type:String,
-        require:true
+        required:true
     },
-    passoword:{
-        min:5,
+    password:{
         type:String,
-        require:true
+        required:true,
     },
-    profilePicture:{
-        default:""
+    profilePicture: {
+        type: String,
+        default: "",
     },
-    coverPicture:{
-        default:""
+    coverPicture: {
+        type: String,
+        default: "",
     },
     followers: { // Should be an array
-        type:Array,
-        default:[]
+        type: Array,
+        default: []
     }, 
     isAdmin:{
         type:Boolean,
