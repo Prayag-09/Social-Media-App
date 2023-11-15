@@ -15,16 +15,19 @@ app.use(morgan("tiny"))
 
 mongoose.connect(process.env.MONGO_URL) // URL from env file
 .then(() => {
-        console.log('Connected to MongoDB');
+        console.log('Connected to MongoDB')
     })
 .catch((error) => {
         console.error('Error connecting to MongoDB:', error.message);
     });
+
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
+const postAuth = require('./routes/posts');
 
 app.use('/app/users' , userRoute); // Routes to user page
 app.use('/app/auth' , authRoute); // Routes to auth page
+app.use('/app/posts' , postAuth); // Routes to posts page
 
 app.listen(port, () => {
     console.log(`Server is up @ http://localhost:${port} `)
