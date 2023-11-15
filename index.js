@@ -23,8 +23,8 @@ mongoose.connect(process.env.MONGO_URL) // URL from env file
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
 
-app.use('/api/users' , userRoute); // Routes to user page
-app.use('/api/auth' , authRoute); // Routes to auth page
+app.use('/app/users' , userRoute); // Routes to user page
+app.use('/app/auth' , authRoute); // Routes to auth page
 
 app.listen(port, () => {
     console.log(`Server is up @ http://localhost:${port} `)
